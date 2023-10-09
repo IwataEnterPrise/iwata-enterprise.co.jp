@@ -1,0 +1,273 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    background-color: #fffeff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+#logo {
+    padding: 4px;
+    user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    webkit-user-select: none;
+    height: 50px;
+}
+
+#iep {
+    padding: 4px 0 0 0;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    webkit-user-select: none;
+    horiz-align: center;
+}
+
+#contact:hover {
+    margin: 0 8px 0 auto;
+    padding: 8px;
+    background: linear-gradient(to right, #f09903 0%, #752c7e 100%);
+    border-radius: 20px;
+    color: whitesmoke;
+    transform: translateY(-5px); /* ボタンを上に移動 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#contact {
+    margin: 0 8px 0 auto;
+    padding: 8px;
+    background: linear-gradient(to right, #f09903 0%, #752c7e 100%);
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    color: whitesmoke;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#home:hover {
+    margin: 0 8px 0 auto;
+    padding: 8px;
+    background: linear-gradient(to right, #f09903 0%, #752c7e 100%);
+    border-radius: 20px;
+    color: whitesmoke;
+    transform: translateY(-5px); /* ボタンを上に移動 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#home {
+    margin: 0 8px 0 auto;
+    padding: 8px;
+    background: linear-gradient(to right, #f09903 0%, #752c7e 100%);
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    color: whitesmoke;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#popup {
+    display: none;
+}
+
+.popup-open {
+    cursor: pointer;
+}
+
+.popup-overlay {
+    display: none;
+}
+
+#popup:checked ~ .popup-overlay {
+    display: block;
+    z-index: 99999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.popup-window {
+    width: 90vw;
+    max-width: 560px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-text {
+    margin: 0;
+}
+
+.popup-text:not(:last-of-type) {
+    margin-bottom: 1em
+}
+
+.popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: -26px;
+    right: 0;
+}
+
+.tab-button {
+    background-color: #f0f0f0;
+    padding: 10px 50px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.tab-button:hover {
+    background-color: #e0e0e0;
+    padding: 10px 50px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.tab-button.active {
+    background-color: #e0e0e0;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* ページTOPに戻る */
+.pagetop{
+    display: none;
+    position: fixed;
+    right: 15px;
+    bottom: 60px;
+}
+.pagetop a{
+    display: block;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background: #7db4e6;
+    border-radius: 50%;
+    line-height: 50px;
+}
+.pagetop a i{
+    font-size: 20px;
+    color:#fff;
+    line-height: 50px;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #4b5564;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+address {
+    font-style: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    padding: 2rem;
+    font-size: 15px;
+    color: #4b5564;
+    background: #fff;
+}
+
+.footer__navi-heading {
+    font-weight: 600;
+}
+
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.footer__navi li {
+    margin-bottom: 0.75rem;
+}
+
+.footer__address {
+    margin-bottom: 2rem;
+}
+
+.footer__address a {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .md-flex {
+        display: flex;
+    }
+
+    .md-justify-between {
+        justify-content: space-between;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer__address a {
+        text-decoration: none;
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg-flex {
+        display: flex;
+    }
+}
