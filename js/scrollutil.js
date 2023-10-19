@@ -1,5 +1,5 @@
 $(window).scroll(function () {
-    var now = $(window).scrollTop();
+    const now = $(window).scrollTop();
     if (now > 200) {
         $('.pagetop').fadeIn("slow");
     } else {
