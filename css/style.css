@@ -27,7 +27,7 @@ header {
     height: 50px;
 }
 
-#iep {
+.iep {
     padding: 4px 0 0 0;
     width: 100%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -39,6 +39,10 @@ header {
     -ms-user-select: none;
     webkit-user-select: none;
     horiz-align: center;
+}
+
+#iep-div {
+    text-align: center;
 }
 
 #contact:hover {
@@ -116,6 +120,11 @@ header {
     transform: translate(-50%, -50%);
 }
 
+.popup-window, .popup-window {
+    max-height: 90vh; /* ポップアップの最大高さを90vhに制限 */
+    overflow-y: auto; /* スクロールバーを追加 */
+}
+
 .popup-text {
     margin: 0;
 }
@@ -127,9 +136,85 @@ header {
 .popup-close {
     cursor: pointer;
     position: absolute;
-    top: -26px;
-    right: 0;
+    top: 10px; /* 上部からの距離を調整 */
+    right: 10px; /* 右側からの距離を調整 */
+    color: #000; /* ボタンのテキスト色を設定 */
+    font-size: 16px; /* ボタンのテキストサイズを設定 */
+    background: #fff; /* ボタンの背景色を設定 */
+    padding: 5px 10px; /* ボタンの余白を設定 */
+    border-radius: 5px; /* ボタンの角丸を設定 */
+    border: 1px solid #000; /* ボタンの境界線を設定 */
 }
+
+.popup-close:hover {
+    background: #eee; /* ホバー時の背景色を設定 */
+}
+
+#popup_footer {
+    display: none;
+}
+
+.popup-open_footer {
+    cursor: pointer;
+}
+
+.popup-overlay_footer {
+    display: none;
+}
+
+#popup_footer:checked ~ .popup-overlay_footer {
+    display: block;
+    z-index: 99999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.popup-window_footer {
+    width: 90vw;
+    max-width: 560px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-window, .popup-window_footer {
+    max-height: 90vh; /* ポップアップの最大高さを90vhに制限 */
+    overflow-y: auto; /* スクロールバーを追加 */
+}
+
+.popup-text_footer {
+    margin: 0;
+}
+
+.popup-text_footer:not(:last-of-type) {
+    margin-bottom: 1em
+}
+
+.popup-close_footer {
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* 上部からの距離を調整 */
+    right: 10px; /* 右側からの距離を調整 */
+    color: #000; /* ボタンのテキスト色を設定 */
+    font-size: 16px; /* ボタンのテキストサイズを設定 */
+    background: #fff; /* ボタンの背景色を設定 */
+    padding: 5px 10px; /* ボタンの余白を設定 */
+    border-radius: 5px; /* ボタンの角丸を設定 */
+    border: 1px solid #000; /* ボタンの境界線を設定 */
+}
+
+.popup-close_footer:hover {
+    background: #eee; /* ホバー時の背景色を設定 */
+}
+
 
 .tab-button {
     background-color: #f0f0f0;
@@ -162,25 +247,27 @@ header {
 }
 
 /* ページTOPに戻る */
-.pagetop{
+.pagetop {
     display: none;
     position: fixed;
     right: 15px;
     bottom: 60px;
 }
-.pagetop a{
+
+.pagetop a {
     display: block;
     font-size: 0;
     width: 50px;
     height: 50px;
     text-align: center;
-    background: #7db4e6;
+    background: linear-gradient(to right, #f09903 0%, #752c7e 100%);
     border-radius: 50%;
     line-height: 50px;
 }
-.pagetop a i{
+
+.pagetop a i {
     font-size: 20px;
-    color:#fff;
+    color: #fff;
     line-height: 50px;
 }
 
@@ -199,6 +286,10 @@ a {
 }
 
 a:hover {
+    color: #000;
+}
+
+label:hover {
     color: #000;
 }
 
@@ -269,5 +360,50 @@ address {
 @media (min-width: 1024px) {
     .lg-flex {
         display: flex;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #logo {
+        padding: 4px;
+        user-drag: none;
+        -webkit-user-drag: none;
+        -moz-user-select: none;
+        user-select: none;
+        -ms-user-select: none;
+        webkit-user-select: none;
+        max-width: 90%;
+        height: auto;
+    }
+
+    #contact {
+        margin: 0 8px 0 auto;
+        padding: 8px;
+        background: linear-gradient(to right, #f09903 0%, #752c7e 100%);
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        color: whitesmoke;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        width: 116%;
+        height: auto;
+        display: inline-block;
+    }
+
+    .tab-button {
+        background-color: #f0f0f0;
+        padding: 6px 6px;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 4px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .tab-button:hover {
+        background-color: #e0e0e0;
+        padding: 6px 6px;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 4px;
+        border-radius: 0 0 5px 5px;
     }
 }
