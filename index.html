@@ -2,20 +2,22 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <title>IWATAエンタープライズ</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="js/animation.js"></script>
     <script src="js/tab.js"></script>
     <script src="js/scrollutil.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body>
 <header id="header">
-    <a href="https://www.iwata-enterprise.co.jp/"><img src="image/logo.jpg" alt="Iwata EnterPrise Logo" id="logo"></a>
-    <input type="checkbox" id="popup">
-    <label class="popup-open" id="contact" for="popup">お問い合わせ</label>
+    <a href="https://www.iwata-enterprise.co.jp/" id="logoclick"><img alt="Iwata EnterPrise Logo" id="logo"
+                                                                      src="image/logo.jpg"></a>
+    <input id="popup" type="checkbox">
+    <label class="popup-open" for="popup" id="contact">お問い合わせ</label>
     <div class="popup-overlay">
         <div class="popup-window">
             <p class="popup-text">
@@ -26,19 +28,115 @@
             TEL：04-2968-8101<br>
             FAX：04-2968-8103<br>
             MAIL：info@iep-transport.co.jp
-            <label class="popup-close" for="popup">
-                <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0" y1="0" x2="18" y2="18" stroke="white" stroke-width="3"></line>
-                    <line x1="0" y1="18" x2="18" y2="0" stroke="white" stroke-width="3"></line>
-                </svg>
-            </label>
+            <label class="popup-close" for="popup">閉じる</label>
         </div>
     </div>
 </header>
 
 <main>
-    <h1>申し訳ございません。現在サイトはメンテナンス中です。</h1>
+    <div id="tab-container">
+        <button class="tab-button active" data-tab="about">会社概要</button>
+        <button class="tab-button" data-tab="detail">事業内容</button>
+        <button class="tab-button" data-tab="history">沿革</button>
+        <button class="tab-button" data-tab="philosophy">経営理念</button>
+        <button class="tab-button" data-tab="guidelines">行動指針</button>
+        <button class="tab-button" data-tab="motto">社訓</button>
+        <button class="tab-button" data-tab="greeting">社長の挨拶</button>
+    </div>
+    <div id="tab-content">
+        <div class="tab-panel active" id="about">
+            <img alt="About" class="iep" src="image/iep-about.jpg">
+        </div>
+        <div class="tab-panel" id="detail">
+            <img alt="Detail" class="iep" src="image/iep-detail.jpg">
+        </div>
+        <div class="tab-panel" id="history">
+            <img alt="History" class="iep" src="image/iep-history.jpg">
+        </div>
+        <div class="tab-panel" id="philosophy">
+            <img alt="Philosophy" class="iep" src="image/iep-philosophy.jpg">
+        </div>
+        <div class="tab-panel" id="guidelines">
+            <img alt="Guidelines" class="iep" src="image/iep-guidelines.jpg">
+        </div>
+        <div class="tab-panel" id="motto">
+            <img alt="Motto" class="iep" src="image/iep-motto.jpg">
+        </div>
+        <div class="tab-panel" id="greeting">
+            <img alt="Greeting" class="iep" src="image/iep-greeting.jpg">
+        </div>
+    </div>
+    <!-- ページトップへ戻るボタン -->
+    <p class="pagetop" style="display: block;">
+        <a href="#">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </p>
 </main>
 
+<footer class="footer">
+    <div class="lg-flex md-justify-between">
+        <div>
+            <a class="footer__logo" href="https://www.iwata-enterprise.co.jp/">
+                <img alt="Iwata-EnterPrise Logo" height="40" src="image/logo.jpg" width="290"/>
+            </a>
+            <address class="footer__address">
+                株式会社IWATAエンタープライズ<br/>
+                〒359-1163 埼玉県所沢市西狭山ヶ丘１－２５８－２７<br/>
+                TEL：<a href="tel:">04-2968-8101</a> / FAX：04-2968-8103<br/>
+            </address>
+        </div>
+        <div class="grid">
+            <div>
+                <p class="footer__navi-heading">ABOUT</p>
+                <ul class="footer__navi">
+                    <input id="popup_footer" type="checkbox">
+                    <label class="popup-open_footer" for="popup_footer">プライバシーポリシー</label>
+                    <div class="popup-overlay_footer">
+                        <div class="popup-window_footer">
+                            <p class="popup-text_footer">
+                            <h3>プライバシーポリシー</h3><br>
+                            <h4>1. 取得する個人情報</h4>
+                            当サイトでは、お問い合わせの際に以下の個人情報を収集することがあります。<br>
+                            ・氏名<br>
+                            ・メールアドレス<br>
+                            ・その他の連絡先情報（任意）<br>
+                            ・クッキーと同様の技術を使用したウェブサイトの利用情報（詳細は第4項参照）<br>
+                            <h4>2. 個人情報の利用目的</h4>
+                            取得した個人情報は以下の目的で利用いたします。<br>
+                            ・お問い合わせへの回答<br>
+                            ・サービスの提供と改善<br>
+                            ・ウェブサイトのカスタマイズとユーザーエクスペリエンスの向上<br>
+                            ・法的要件や規制への適合<br>
+                            <h4>3. 個人情報の保管期間</h4>
+                            個人情報は、利用目的を達成するために必要な期間だけ保管いたします。法的要件に従い、一定期間情報を保持することが必要な場合、それに準拠いたします。<br>
+                            <h4>4. クッキーとトラッキング</h4>
+                            当サイトはクッキーや疑似の技術を使用してウェブサイトの利用情報を収集することがあります。これはウェブサイトの機能改善や広告のカスタマイズのために行われます。ユーザーはブラウザ設定でクッキーの受け入れを管理できます。<br>
+                            <h4>5. セキュリティ対策</h4>
+                            個人情報のセキュリティを保護するため、適切な物理的・技術的・組織的対策を講じています。ただし、インターネット上のデータ送信は100%のセキュリティを保証するものではありません。ユーザーもウェブサイトの利用時に個人情報の安全性に配慮することをお願いします。<br>
+                            <h4>6. 個人情報の第三者開示</h4>
+                            取得した個人情報は、本人の同意が得られない限り、第三者に開示することはありません。ただし、法律に基づく要件に従い、情報を開示する場合があります。<br>
+                            <h4>7. お問い合わせ先</h4>
+                            プライバシーに関するご質問やお問い合わせは、以下の連絡先までお願いいたします。<br>
+                            株式会社IWATAエンタープライズ<br>
+                            〒359-1163<br>
+                            埼玉県所沢市西狭山ケ丘1-258-27<br>
+                            TEL：04-2968-8101<br>
+                            FAX：04-2968-8103<br>
+                            MAIL：info@iep-transport.co.jp<br><br>
+                            このプライバシーポリシーは定期的に見直され、変更される場合があります。最新の情報にアクセスするために、定期的に当サイトを訪問してください。<br>
+                            最終更新日: 2023/10/09
+                            <label class="popup-close_footer" for="popup_footer">閉じる</label>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <p class="copyright">© 2023 <a href="https://www.iwata-enterprise.co.jp/">Iwata-EnterPrise Inc.</a> All Rights
+        Reserved.
+    </p>
+</footer>
 </body>
 </html>
